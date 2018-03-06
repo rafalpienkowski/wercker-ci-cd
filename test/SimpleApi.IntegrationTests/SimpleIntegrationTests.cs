@@ -30,9 +30,7 @@ namespace SimpleApi.IntegrationTests
                 Value = "Test value"
             };
 
-            await PostValueModel(new ValueModel {
-                Value = "Test value"
-            });
+            await PostValueModel(valueModel);
 
             var valueModels = await GetAllValueModels();
 
@@ -43,6 +41,7 @@ namespace SimpleApi.IntegrationTests
         [Fact]
         public async Task TestValuesPostTwiceAndGetAll()
         {
+            // arrange
             var valueModel = new ValueModel
             {
                 Value = "Test value"
@@ -52,9 +51,11 @@ namespace SimpleApi.IntegrationTests
                 Value = "Test value 2"
             };
 
+            // act
             await PostValueModel(valueModel);
             await PostValueModel(valueModel2);
             
+            // asset
             var valueModels = await GetAllValueModels();
 
             Assert.Equal(2, valueModels.Count);
