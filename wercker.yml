@@ -58,7 +58,7 @@ integration:
           dotnet test
     - script:
         name: copy binary
-        cwd: src/SimpleApi.IntegrationTests
+        cwd: src/SimpleApi
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app 
 deploy:
