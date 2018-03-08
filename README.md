@@ -86,7 +86,13 @@ Let's discuss most essential fragments of it:
 ![Image2](https://raw.githubusercontent.com/rafalpienkowski/resources/master/wercker-ci-cd/Screenshot_2.png)
 
 - *Steps*. Each pipeline consist of steps. More information about it toy can find [here ](http://devcenter.wercker.com/docs/wercker-yml).
-In our case, most of the steps are simple scripts which contain a dedicated dotnet command (restore, build, publish, test). The [internal/docker-push](http://devcenter.wercker.com/docs/steps/internal-steps) step pushes created Docker image to our DockerHub repository. We need to specify the repository, registry, username and password for our DockerHub repository. We can add an optional tag, entry point, environment variables. To avoid storage our DockerHub credentials in our public GitHub repository we can utilize built-in variables. I've used $USERNAME and $PASSWORD variable which you can declare on Environment tab.
+In our case, most of the steps are simple scripts which contain a dedicated dotnet command (restore, build, publish, test). The [internal/docker-push](http://devcenter.wercker.com/docs/steps/internal-steps) step pushes created Docker image to our DockerHub repository. [Mine repository on the DockerHub](https://hub.docker.com/r/rafalpienkowski/wercker-demo/).  We need to specify the repository, registry, username and password for our DockerHub repository. We can add an optional tag, entry point, environment variables. To avoid storage our DockerHub credentials in our public GitHub repository we can utilize built-in variables. I've used $USERNAME and $PASSWORD variable which you can declare on Environment tab.
+
+You can download my pull my image to your computer and play with it on your own. Below required command:
+
+```
+docker pull rafalpienkowski/wercker-demo
+```
 
 ![Image3](https://raw.githubusercontent.com/rafalpienkowski/resources/master/wercker-ci-cd/Screenshot_3.png)
 
